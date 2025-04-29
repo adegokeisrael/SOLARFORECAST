@@ -1,6 +1,12 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import GRU
+
+# Define model
+model = Sequential()
+model.add(GRU(units=20, input_shape=(7, 10), return_sequences=True))
 
 from prophet import Prophet
 from prophet.plot import add_changepoints_to_plot
